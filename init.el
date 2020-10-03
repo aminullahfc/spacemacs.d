@@ -110,10 +110,11 @@ This function should only modify configuration layer settings."
           org-journal-enable-agenda-integration t
           org-want-todo-bindings t
           org-enable-jira-support t
-          org-enable-sticky-header nil
+          org-enable-sticky-header t
+          ord-enable-verb-support t
           org-journal-date-prefix "#+title: "
+          org-journal-date-format "<%Y-%m-%d>"
           org-journal-file-format "%Y-%m-%d.org"
-          org-journal-date-format "%A, %d %B %Y"
           org-journal-dir "~/Dropbox/org-mode/journals/" ;; this is overridden in local.el for worklaptop
           org-jira-working-dir "~/Dropbox/org-mode/org-jira" ;; override in local.el for worklaptop
           org-projectile-file "TODOs.org"

@@ -12,21 +12,27 @@
           '(("d" "daily" plain (function org-roam-capture--get-point) ""
              :immediate-finish t
              :file-name "journals/%<%Y-%m-%d>"
-             :head "#+TITLE: %<%Y-%m-%d>")))
+             :head "#+title: %<<%Y-%m-%d>>"))) ;; same as org-journal-date-format
     :init
     (progn
       (spacemacs/declare-prefix "aor" "org-roam")
+      (spacemacs/declare-prefix "aord" "org-roam-dailies")
       (spacemacs/set-leader-keys
-        "aorl" 'org-roam
-        "aort" 'org-roam-dailies-today
+        "aordt" 'org-roam-dailies-today
+        "aordy" 'org-roam-dailies-yesterday
+        "aordT" 'org-roam-dailies-tomorrow
         "aorf" 'org-roam-find-file
-        "aorg" 'org-roam-graph)
+        "aorg" 'org-roam-graph
+        "aorr" 'org-roam)
 
       (spacemacs/declare-prefix-for-mode 'org-mode "mr" "org-roam")
+      (spacemacs/declare-prefix-for-mode 'org-mode "mrd" "org-roam-dailies")
       (spacemacs/set-leader-keys-for-major-mode 'org-mode
-        "rl" 'org-roam
-        "rt" 'org-roam-dailies-today
         "rb" 'org-roam-switch-to-buffer
+        "rdT" 'org-roam-dailies-tomorrow
+        "rdt" 'org-roam-dailies-today
+        "rdy" 'org-roam-dailies-yesterday
         "rf" 'org-roam-find-file
+        "rg" 'org-roam-graph
         "ri" 'org-roam-insert
-        "rg" 'org-roam-graph))))
+        "rr" 'org-roam))))
